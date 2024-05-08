@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "994856421032",
+    "project_id": "pushnotificationtest-ecae3",
+    "storage_bucket": "pushnotificationtest-ecae3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994856421032:android:e2ef912c5083962dd2649d",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl1tpOKh58gcLEG9TH85GHJ62EakhnE08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
