@@ -13,6 +13,38 @@
     </ion-toolbar>
   </ion-header>
 
-  <button (click)="registrar()"> Registrar notificacion</button>
-  <button (click)="desregistrar()"> Registrar notificacion</button>
+  mockArray: {{mockArray | json}}
+
+  <button (click)="null"> Null </button>
+  <button (click)="getStoredNotifications()"> Null </button>
+  <button (click)="registrar()"> Registrar listener</button>
+  <button (click)="ver()"> ver</button>
+  <button (click)="remove()"> remove</button>
+  <button (click)="setName()"> setName</button>
+
+  --------------
+  <button (click)="setNotification()"> setNotification</button>
+
+
+  mocks array 
+  @for(item of mockArray ; track item.timeId){
+    <div style="border: solid 2px cyan; margin:6px; padding: 6px;">
+      <p>titulo: {{ item.title}}</p>
+      <p>body: {{ item.body}}</p>
+      <p>id: {{ item.timeId}}</p>
+      <button (click)="borrar(item)">borrar</button>
+    </div>
+  }
+  @for(item of mockArraySignal() ; track item.timeId){
+    <div style="border: solid 2px red; margin:6px; padding: 6px;">
+      <p>titulo: {{ item.title}}</p>
+      <p>body: {{ item.body}}</p>
+      <p>id: {{ item.timeId}}</p>
+      <button (click)="borrar(item)">borrar</button>
+    </div>
+  }
+  <!-- <button (click)="registrar()"> Registrar notificacion</button>
+  <button (click)="regisTopic()"> Registrar topico</button>
+  <button (click)="regisTopic2()"> Registrar topico2</button>
+  <button (click)="unSubscribeFomTopic()"> Desregistrar topico</button> -->
 </ion-content>

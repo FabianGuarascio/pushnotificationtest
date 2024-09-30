@@ -4,11 +4,11 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'pushNotificationTest',
   webDir: 'www',
-  plugins: {
-    PushNotifications: {
-      presentationOptions: ["badge", "sound", "alert"],
-    },
-  },
+  // plugins: {
+  //   PushNotifications: {
+  //     presentationOptions: ["badge", "sound", "alert"],
+  //   },
+  // },
 };
 
 export default config;

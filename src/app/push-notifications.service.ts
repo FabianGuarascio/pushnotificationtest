@@ -1,61 +1,61 @@
 import { Injectable } from '@angular/core';
-import { PushNotifications } from '@capacitor/push-notifications';
+// import { PushNotifications } from '@capacitor/push-notifications';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PushNotificationsService {
 
-  registrationListener = async()=>{
-    await PushNotifications.addListener('registration', token => {
-      console.info('Registration token: ', token.value);
-      console.log(token)
-    });
-  }
-  registrationError = async()=>{
-    await PushNotifications.addListener('registrationError', err => {
-      console.error('Registration error: ', err.error);
-    });
-  }
+  // registrationListener = async()=>{
+  //   await PushNotifications.addListener('registration', token => {
+  //     console.info('Registration token: ', token.value);
+  //     console.log(token)
+  //   });
+  // }
+  // registrationError = async()=>{
+  //   await PushNotifications.addListener('registrationError', err => {
+  //     console.error('Registration error: ', err.error);
+  //   });
+  // }
 
-  addListeners = async () => {
-    await PushNotifications.addListener('registration', token => {
-      console.info('Registration token: ', token.value);
-    });
+  // addListeners = async () => {
+  //   await PushNotifications.addListener('registration', token => {
+  //     console.info('Registration token: ', token.value);
+  //   });
 
-    await PushNotifications.addListener('registrationError', err => {
-      console.error('Registration error: ', err.error);
-    });
+  //   await PushNotifications.addListener('registrationError', err => {
+  //     console.error('Registration error: ', err.error);
+  //   });
 
-    await PushNotifications.addListener('pushNotificationReceived', notification => {
-      console.log('Push notification received: ', notification);
-    });
+  //   await PushNotifications.addListener('pushNotificationReceived', notification => {
+  //     console.log('Push notification received: ', notification);
+  //   });
 
-    await PushNotifications.addListener('pushNotificationActionPerformed', notification => {
-      console.log('Push notification action performed', notification.actionId, notification.inputValue);
-    });
-  }
+  //   await PushNotifications.addListener('pushNotificationActionPerformed', notification => {
+  //     console.log('Push notification action performed', notification.actionId, notification.inputValue);
+  //   });
+  // }
 
-  registerNotifications = async () => {
-    let permStatus = await PushNotifications.checkPermissions();
+  // registerNotifications = async () => {
+  //   let permStatus = await PushNotifications.checkPermissions();
 
-    if (permStatus.receive === 'prompt') {
-      permStatus = await PushNotifications.requestPermissions();
-    }
+  //   if (permStatus.receive === 'prompt') {
+  //     permStatus = await PushNotifications.requestPermissions();
+  //   }
 
-    if (permStatus.receive !== 'granted') {
-      throw new Error('User denied permissions!');
-    }
+  //   if (permStatus.receive !== 'granted') {
+  //     throw new Error('User denied permissions!');
+  //   }
 
-    await PushNotifications.register();
-  }
+  //   await PushNotifications.register();
+  // }
 
-  getDeliveredNotifications = async () => {
-    const notificationList = await PushNotifications.getDeliveredNotifications();
-    console.log('delivered notifications', notificationList);
-  }
+  // getDeliveredNotifications = async () => {
+  //   const notificationList = await PushNotifications.getDeliveredNotifications();
+  //   console.log('delivered notifications', notificationList);
+  // }
 
-  unregistrer = async ()=>{
-    await PushNotifications.unregister()
-  }
+  // unregistrer = async ()=>{
+  //   await PushNotifications.unregister()
+  // }
 }
